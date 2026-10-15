@@ -1,8 +1,23 @@
 # Searching Billions of Records by Email: A Beginner's Blog Series
 
-*Oct 13, 2026 · Full series outline · Part 1 is published as a [separate post](part-1-why-searching-billions-of-rows-is-hard.md)*
+*Oct 13, 2026 · Series outline · each part below has a full post with diagrams*
 
 To find one email among billions of rows in milliseconds, never scan the table: build a lookup structure on email (an index, a key, or a cache) and pick the option that matches your scale, budget and team.
+
+## The posts
+
+| Part | Post |
+| --- | --- |
+| 1 | [Why searching billions of rows by email is hard](part-1-why-searching-billions-of-rows-is-hard.md) |
+| 2 | [B-Tree index in a relational database](part-2-btree-index.md) |
+| 3 | [Partitioning and sharding](part-3-partitioning-and-sharding.md) |
+| 4 | [Key-value and NoSQL stores](part-4-key-value-nosql.md) |
+| 5 | [Search engines (Elasticsearch / OpenSearch)](part-5-search-engines.md) |
+| 6 | [Speed boosters: cache and Bloom filter](part-6-cache-and-bloom-filter.md) |
+| 7 | [Protecting email data (blind index)](part-7-protecting-email-pii.md) |
+| 8 | [Comparison and decision guide](part-8-comparison-and-decision-guide.md) |
+
+The sections below are the short summary of each part.
 
 ## Series map
 
@@ -59,7 +74,7 @@ Look for `Index Scan` instead of `Seq Scan`.
 
 | Pros | Cons |
 | --- | --- |
-| Easiest to add; works with the SQL you already have | A single server still holds one huge index (hundreds of GB at this scale) |
+| Easiest to add; works with the SQL you already have | A single server still holds one huge index (often tens of GB per billion rows) |
 | Also supports range and prefix queries (`email LIKE 'asha%'`) | Index build and maintenance (vacuum, rebuild) get slow on very large tables |
 | Strong consistency and transactions | Every insert also updates the index, so write-heavy loads slow down |
 | Mature tooling and monitoring | Hits a ceiling on one machine; then you need Part 3 |

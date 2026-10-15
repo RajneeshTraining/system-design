@@ -111,3 +111,7 @@ Most slow email lookups come from four avoidable mistakes:
 | 6 | Cache and Bloom filter | How do I skip the database for repeats and misses? |
 | 7 | Protecting email data | How do I search without storing plain emails? |
 | 8 | Comparison and decision guide | Which option should I choose? |
+
+---
+
+**Next:** [Part 2: B-Tree index in a relational database](part-2-btree-index.md)
