@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-label="The search engine is a synced copy and the database stays the source of truth" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>The search engine is a synced copy and the database stays the source of truth</title>
+  <defs>
+    <marker id="e-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+    <marker id="e-arrow-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="24" y="30" font-size="15" font-weight="600" fill="#111827">The search engine is a synced copy; the database stays the source of truth</text>
+  <text x="24" y="62" font-size="11.5" fill="#4b5563">Write path: every change flows to the search index</text>
+
+  <g fill="none" stroke="#6b7280" stroke-width="1.25">
+    <path d="M164 110H204" marker-end="url(#e-arrow)"/>
+    <path d="M324 110H364" marker-end="url(#e-arrow)"/>
+    <path d="M484 110H524" marker-end="url(#e-arrow)"/>
+  </g>
+
+  <rect x="24" y="86" width="140" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="94" y="106" text-anchor="middle" font-weight="600" fill="#111827">Database</text>
+  <text x="94" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">source of truth</text>
+
+  <rect x="204" y="86" width="120" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="264" y="106" text-anchor="middle" font-weight="600" fill="#111827">Change feed</text>
+  <text x="264" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">e.g. Debezium</text>
+
+  <rect x="364" y="86" width="120" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="424" y="106" text-anchor="middle" font-weight="600" fill="#111827">Queue</text>
+  <text x="424" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">e.g. Kafka</text>
+
+  <rect x="524" y="86" width="212" height="48" rx="8" fill="#2563eb" fill-opacity="0.12" stroke="#2563eb" stroke-width="2"/>
+  <text x="630" y="106" text-anchor="middle" font-weight="600" fill="#111827">Search engine</text>
+  <text x="630" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">Elasticsearch / OpenSearch</text>
+
+  <text x="112" y="206" font-size="11.5" fill="#4b5563">Read path: search first, then fetch the full row</text>
+
+  <path d="M580 226V134" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#e-arrow-hot)"/>
+  <path d="M680 134V226" fill="none" stroke="#6b7280" stroke-width="1.25" marker-end="url(#e-arrow)"/>
+  <text x="572" y="184" text-anchor="end" font-size="11.5" fill="#111827">1. search</text>
+  <text x="688" y="184" font-size="11.5" fill="#111827">2. ids</text>
+
+  <rect x="524" y="226" width="212" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="630" y="246" text-anchor="middle" font-weight="600" fill="#111827">App</text>
+  <text x="630" y="264" text-anchor="middle" font-size="11.5" fill="#4b5563">partial, domain or fuzzy email search</text>
+
+  <path d="M524 250H94V134" fill="none" stroke="#6b7280" stroke-width="1.25" marker-end="url(#e-arrow)"/>
+  <text x="309" y="242" text-anchor="middle" font-size="11.5" fill="#111827">3. fetch the full row by id</text>
+</svg>

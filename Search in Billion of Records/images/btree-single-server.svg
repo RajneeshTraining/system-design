@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="760" height="280" role="img" aria-label="One query, one index, one table: the whole lookup happens on a single server" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>One query, one index, one table: the whole lookup happens on a single server</title>
+  <defs>
+    <marker id="b-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="760" height="280" fill="#ffffff"/>
+  <text x="24" y="30" font-size="15" font-weight="600" fill="#111827">One query, one index, one table: the whole lookup stays on a single server</text>
+
+  <rect x="176" y="64" width="560" height="190" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="192" y="90" font-weight="600" fill="#111827">Database server (one machine)</text>
+
+  <g fill="none" stroke="#6b7280" stroke-width="1.25">
+    <path d="M144 144H192" marker-end="url(#b-arrow)"/>
+    <path d="M332 144H372" marker-end="url(#b-arrow)"/>
+    <path d="M542 144H582" marker-end="url(#b-arrow)"/>
+  </g>
+
+  <rect x="24" y="120" width="120" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="84" y="140" text-anchor="middle" font-weight="600" fill="#111827">App</text>
+  <text x="84" y="158" text-anchor="middle" font-size="11.5" fill="#4b5563">sends the query</text>
+
+  <rect x="192" y="120" width="140" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="262" y="140" text-anchor="middle" font-weight="600" fill="#111827">Query planner</text>
+  <text x="262" y="158" text-anchor="middle" font-size="11.5" fill="#4b5563">chooses the index</text>
+
+  <rect x="372" y="120" width="170" height="48" rx="8" fill="#2563eb" fill-opacity="0.12" stroke="#2563eb" stroke-width="2"/>
+  <text x="457" y="140" text-anchor="middle" font-weight="600" fill="#111827">B-Tree index</text>
+  <text x="457" y="158" text-anchor="middle" font-size="11.5" fill="#4b5563">sorted by email</text>
+
+  <rect x="582" y="120" width="138" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="651" y="140" text-anchor="middle" font-weight="600" fill="#111827">Table</text>
+  <text x="651" y="158" text-anchor="middle" font-size="11.5" fill="#4b5563">customer rows</text>
+
+  <text x="262" y="196" text-anchor="middle" font-size="11.5" fill="#111827">1. Pick an index scan</text>
+  <text x="457" y="196" text-anchor="middle" font-size="11.5" fill="#111827">2. Walk root to leaf</text>
+  <text x="651" y="196" text-anchor="middle" font-size="11.5" fill="#111827">3. Fetch the row</text>
+
+  <text x="456" y="236" text-anchor="middle" font-size="11.5" fill="#4b5563">Covering index: if the index holds every column you select, step 3 is skipped</text>
+</svg>

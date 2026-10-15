@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" role="img" aria-label="The key's hash tells the cluster which node owns the email" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>The key's hash tells the cluster which node owns the email</title>
+  <defs>
+    <marker id="k-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+    <marker id="k-arrow-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="760" height="340" fill="#ffffff"/>
+  <text x="24" y="30" font-size="15" font-weight="600" fill="#111827">The key's hash tells the cluster which node owns the email</text>
+
+  <rect x="320" y="46" width="120" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="380" y="66" text-anchor="middle" font-weight="600" fill="#111827">App</text>
+  <text x="380" y="84" text-anchor="middle" font-size="11.5" fill="#4b5563">get(email)</text>
+
+  <path d="M380 94V150" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#k-arrow-hot)"/>
+  <text x="392" y="128" font-size="11.5" fill="#4b5563">hash(email) picks the node</text>
+
+  <rect x="24" y="140" width="712" height="180" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="40" y="164" font-weight="600" fill="#111827" transform="translate(0 0)">Key-value cluster (for example DynamoDB, Cassandra, ScyllaDB)</text>
+
+  <rect x="64" y="182" width="190" height="64" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="159" y="204" text-anchor="middle" font-weight="600" fill="#111827">Node A</text>
+  <text x="159" y="222" text-anchor="middle" font-size="11.5" fill="#4b5563">owns hash range 1</text>
+  <text x="159" y="238" text-anchor="middle" font-size="11.5" fill="#4b5563">replica of other keys</text>
+
+  <rect x="285" y="182" width="190" height="64" rx="8" fill="#2563eb" fill-opacity="0.12" stroke="#2563eb" stroke-width="2"/>
+  <text x="380" y="204" text-anchor="middle" font-weight="600" fill="#111827">Node B</text>
+  <text x="380" y="222" text-anchor="middle" font-size="11.5" fill="#4b5563">owns hash range 2</text>
+  <text x="380" y="238" text-anchor="middle" font-size="11.5" fill="#4b5563">primary for this email</text>
+
+  <rect x="506" y="182" width="190" height="64" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="601" y="204" text-anchor="middle" font-weight="600" fill="#111827">Node C</text>
+  <text x="601" y="222" text-anchor="middle" font-size="11.5" fill="#4b5563">owns hash range 3</text>
+  <text x="601" y="238" text-anchor="middle" font-size="11.5" fill="#4b5563">replica of other keys</text>
+
+  <g fill="none" stroke="#6b7280" stroke-width="1.25" stroke-dasharray="4 4">
+    <path d="M380 246V274H159V246" marker-end="url(#k-arrow)"/>
+    <path d="M380 274H601V246" marker-end="url(#k-arrow)"/>
+  </g>
+  <text x="380" y="300" text-anchor="middle" font-size="11.5" fill="#4b5563">copies of the row are replicated to other nodes for safety</text>
+</svg>

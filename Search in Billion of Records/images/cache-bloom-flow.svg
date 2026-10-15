@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="Cheap checks can answer a lookup before the database is touched" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>Cheap checks can answer a lookup before the database is touched</title>
+  <defs>
+    <marker id="c-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="760" height="330" fill="#ffffff"/>
+  <text x="24" y="30" font-size="15" font-weight="600" fill="#111827">Cheap checks can answer a lookup before the database is touched</text>
+
+  <g fill="none" stroke="#6b7280" stroke-width="1.25">
+    <path d="M134 110H186" marker-end="url(#c-arrow)"/>
+    <path d="M314 110H366" marker-end="url(#c-arrow)"/>
+    <path d="M494 110H560" marker-end="url(#c-arrow)"/>
+    <path d="M250 150V206" marker-end="url(#c-arrow)"/>
+    <path d="M430 150V206" marker-end="url(#c-arrow)"/>
+    <path d="M640 134V206" marker-end="url(#c-arrow)"/>
+  </g>
+
+  <rect x="24" y="86" width="110" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="79" y="106" text-anchor="middle" font-weight="600" fill="#111827">Request</text>
+  <text x="79" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">find an email</text>
+
+  <polygon points="186,110 250,70 314,110 250,150" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="250" y="106" text-anchor="middle" font-size="12" fill="#111827">Bloom filter</text>
+  <text x="250" y="122" text-anchor="middle" font-size="11.5" fill="#4b5563">says maybe?</text>
+
+  <polygon points="366,110 430,70 494,110 430,150" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="430" y="115" text-anchor="middle" font-size="12" fill="#111827">In cache?</text>
+
+  <rect x="560" y="86" width="160" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="640" y="106" text-anchor="middle" font-weight="600" fill="#111827">Database</text>
+  <text x="640" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">B-Tree lookup</text>
+
+  <rect x="165" y="206" width="170" height="48" rx="8" fill="#2563eb" fill-opacity="0.12" stroke="#2563eb" stroke-width="2"/>
+  <text x="250" y="235" text-anchor="middle" fill="#111827">Return not found</text>
+
+  <rect x="345" y="206" width="170" height="48" rx="8" fill="#2563eb" fill-opacity="0.12" stroke="#2563eb" stroke-width="2"/>
+  <text x="430" y="235" text-anchor="middle" fill="#111827">Return cached row</text>
+
+  <rect x="550" y="206" width="180" height="48" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="640" y="235" text-anchor="middle" fill="#111827">Cache it, then return</text>
+
+  <text x="340" y="102" text-anchor="middle" font-size="11.5" fill="#4b5563">yes</text>
+  <text x="527" y="102" text-anchor="middle" font-size="11.5" fill="#4b5563">no</text>
+  <text x="258" y="182" font-size="11.5" fill="#4b5563">definitely not</text>
+  <text x="438" y="182" font-size="11.5" fill="#4b5563">yes</text>
+
+  <text x="380" y="298" text-anchor="middle" font-size="11.5" fill="#4b5563">Blue boxes answer without touching the main database</text>
+</svg>
