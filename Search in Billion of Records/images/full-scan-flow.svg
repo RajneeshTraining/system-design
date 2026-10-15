@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 262" width="760" height="262" role="img" aria-label="A full scan reads rows one by one until it finds a match" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <title>A full scan reads rows one by one until it finds a match</title>
+  <defs>
+    <marker id="scan-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="760" height="262" fill="#ffffff"/>
+  <text x="24" y="30" font-size="15" font-weight="600" fill="#111827">A full scan reads rows one by one until it finds a match</text>
+
+  <g fill="none" stroke="#6b7280" stroke-width="1.25">
+    <path d="M160 110H200" marker-end="url(#scan-arrow)"/>
+    <path d="M340 110H386" marker-end="url(#scan-arrow)"/>
+    <path d="M514 110H570" marker-end="url(#scan-arrow)"/>
+    <path d="M450 150V210H270V134" marker-end="url(#scan-arrow)"/>
+  </g>
+
+  <rect x="20" y="86" width="140" height="48" rx="8" fill="none" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="90" y="106" text-anchor="middle" font-weight="600" fill="#111827">Query</text>
+  <text x="90" y="124" text-anchor="middle" font-size="11.5" fill="#4b5563">find one email</text>
+
+  <rect x="200" y="86" width="140" height="48" rx="8" fill="none" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="270" y="115" text-anchor="middle" font-weight="600" fill="#111827">Read next row</text>
+
+  <polygon points="386,110 450,70 514,110 450,150" fill="none" stroke="#6b7280" stroke-width="1.25"/>
+  <text x="450" y="115" text-anchor="middle" font-size="12" fill="#111827">Email equal?</text>
+
+  <rect x="570" y="86" width="140" height="48" rx="8" fill="#2563eb" fill-opacity="0.12" stroke="#2563eb" stroke-width="2"/>
+  <text x="640" y="115" text-anchor="middle" font-weight="600" fill="#111827">Return the row</text>
+
+  <text x="542" y="102" text-anchor="middle" font-size="11.5" fill="#4b5563">yes</text>
+  <text x="360" y="202" text-anchor="middle" font-size="11.5" fill="#4b5563">no: try the next row</text>
+  <text x="360" y="238" text-anchor="middle" font-size="11.5" fill="#4b5563">Worst case: every row in the table is read</text>
+</svg>
