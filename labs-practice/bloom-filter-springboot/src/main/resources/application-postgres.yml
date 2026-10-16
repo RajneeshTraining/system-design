@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/bloomdb}
+    username: ${DB_USER:bloom}
+    password: ${DB_PASSWORD:bloom}
+    hikari:
+      maximum-pool-size: 30
+  jpa:
+    hibernate:
+      ddl-auto: validate      # schema is owned by docs/schema-postgres.sql (or Flyway/Liquibase in real projects)
+
+bloom:
+  expected-insertions: ${BLOOM_CAPACITY:1000000}
+  fpp: ${BLOOM_FPP:0.01}
+  snapshot-enabled: true      # safe with a real DB: restarts load the file and only scan new rows
+
+demo:
+  seed:
+    enabled: ${DEMO_SEED:true}
+    rows: ${DEMO_ROWS:1000000}
