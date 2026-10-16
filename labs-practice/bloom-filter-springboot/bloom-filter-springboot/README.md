@@ -32,6 +32,7 @@ GET /api/users?email=x@y.com
 | `docs/BLOOM_FILTER_EXPLAINED.md` | Concepts, step by step |
 | `docs/SIZING.md` | Memory / false-positive math for billions of rows |
 | `docs/PRODUCTION_GUIDE.md` | Multi-instance, deletes, Redis, monitoring, pitfalls |
+| `docs/blog/` | Beginner-friendly Medium article draft + 6 diagrams |
 | `docs/schema-postgres.sql` | PostgreSQL DDL (mounted by docker-compose) |
 | `docker-compose.yml` | Local PostgreSQL |
 | `scripts/try-it.sh` | Curl demo that prints the savings |

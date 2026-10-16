@@ -69,7 +69,7 @@ Key facts that fall out of this:
 | Property | Bloom filter | HashSet of emails | DB index |
 |---|---|---|---|
 | Memory for 1B emails | **~1.2 GB** (1% FPP) | ~100+ GB | n/a (disk, hundreds of GB) |
-| Lookup cost | O(k) ≈ 7 hashes, nanoseconds | O(1) but huge memory | several I/Os, ms |
+| Lookup cost | O(k) ≈ 7 hashes, in memory | O(1) but huge memory | several I/Os, ms |
 | False negatives | never | never | never |
 | False positives | tunable (e.g. 1%) | never | never |
 | Stores the data | no (privacy-friendly) | yes | yes |
@@ -113,7 +113,7 @@ lookup(email):
 ```
 
 Expected result with a 1% filter: of 100 lookups for non-existent emails, ~99 return instantly from memory and ~1
-reaches the DB. Lookups for existing emails behave exactly as before (plus ~100 ns).
+reaches the DB. Lookups for existing emails behave exactly as before (plus a negligible in-memory check).
 
 On insert: save the row → commit → `bloom.put(email)`.
 
@@ -132,7 +132,7 @@ On insert: save the row → commit → `bloom.put(email)`.
 
 ## 9. Common mistakes
 
-1. **Under-sizing `n`.** Inserting 3× the planned capacity pushes a 1% filter towards ~30%+ false positives.
+1. **Under-sizing `n`.** Inserting 3× the planned capacity pushes a 1% filter towards ~44% false positives (measured).
 2. **Different normalization** on write vs. read (`Foo@x.com` vs `foo@x.com`) → false *negatives* from the user's view.
 3. **Using the filter as the source of truth.** It is a cache in front of the DB; keep the unique index.
 4. **Serving traffic before the filter is complete** and answering "No" — must fail open until built.
