@@ -1019,7 +1019,3 @@ One-paragraph description of what happened and the customer impact.
 6. **Prevent recurrence** (observability, guardrails, load tests, runbooks, post-mortems).
 
 > *Scaling the database is the last resort. Reducing the work the database has to do is the first.*
-
----
-
-*License: MIT. Contributions welcome via pull request.*
