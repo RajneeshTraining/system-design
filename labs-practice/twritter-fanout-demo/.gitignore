@@ -1,0 +1,20 @@
+# Build output
+target/
+*.class
+*.jar
+*.log
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep the Maven wrapper
+!.mvn/wrapper/maven-wrapper.properties
